@@ -1,3 +1,21 @@
 body {
-    background-color: red;
+    background-color:#FDF2E9;
+}
+
+h1{
+    color: saddlebrown;
+    text-align: center;
+}
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.square{
+    width: 30%;
+    background: saddlebrown;
+    padding-top: 30%;
+    float: left;
+    margin: 1.66%;
 }
