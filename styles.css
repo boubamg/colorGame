@@ -1,10 +1,29 @@
 body {
-    background-color:#FDF2E9;
+    margin: 0;
+    background-color:black;
+    font-family: "Montserrat","Avenir";
+    
+    
 }
 
-h1{
-    color: #FFDF00;
+h1 {
+    margin: 0;
+    padding: 10px;
+    background-color: #FFDF00;
+    font-weight: normal;
     text-align: center;
+    text-transform: uppercase;
+    line-height: 1.1;
+    
+}
+
+#colorDisplay {
+    font-size: 200%;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }
 
 #container {
@@ -12,18 +31,39 @@ h1{
     margin: 0 auto;
 }
 
-.square{
+.square {
     width: 30%;
     background: saddlebrown;
     padding-top: 30%;
     float: left;
     margin: 1.66%;
     border-radius: 30%;
+    transition: background 0.5s;
 }
 
 #stripe {
+    margin-bottom: 10px;
     background: white;
     height: 30px;
     text-align: center;
     color: black;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.5s;
+}
+
+button:hover{
+    background: #FFDF00;
+}
+
+.selected {
+    background: #FFDF00;
 }

@@ -4,7 +4,49 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var reset = document.querySelector("#reset");
+var easybtn = document.querySelector("#easyButton");
+var hardbtn = document.querySelector("#hardButton");
 var colorPicked = pickColor();
+
+easybtn.addEventListener("click", function(){
+    easybtn.classList.add("selected");
+    hardbtn.classList.remove("selected");
+    colors = generateRandomColor(3);
+    colorPicked = pickColor();
+    
+    colorDisplay.textContent = colorPicked;
+
+    for(var i = 0; i < square.length; i++){
+        if(colors[i]){
+            square[i].style.background = colors[i];
+        } else {
+            square[i].style.display = "none";
+        }       
+    }
+    // reset background color
+    h1.style.background = "";
+});
+
+hardbtn.addEventListener("click", function(){
+    easybtn.classList.remove("selected");
+    hardbtn.classList.add("selected");
+    // generate all new colors
+    colors = generateRandomColor(6);
+    // pick a new random color from array
+    colorPicked = pickColor();
+    // change colorDisplay to match picked Color
+    colorDisplay.textContent = colorPicked;
+    // change colors of squares
+    for(var i = 0; i < square.length; i++){
+        square[i].style.display = "block";
+        square[i].style.background = colors[i];
+    }
+    // reset background color
+    h1.style.background = "";
+    
+});
+
+
 
 colorDisplay.textContent = colorPicked;
 
@@ -23,6 +65,8 @@ reset.addEventListener("click", function(){
     h1.style.background = "";
     // reset button textcontent
     reset.textContent = "New Colors";
+    // reset text
+    messageDisplay.textContent = "";
 });
 
 
@@ -43,7 +87,7 @@ for(var i = 0; i < square.length; i++){
             reset.textContent = "Play Again ?"
             h1.style.background = clickedColor;
         } else {
-            this.style.background = "#FDF2E9";
+            this.style.background = "white";
             messageDisplay.textContent = "Try Again";
         }
     });
